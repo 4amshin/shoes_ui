@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:shoes_ui/model/shoes_model.dart';
 import 'package:shoes_ui/widget/item.dart';
 import 'package:shoes_ui/widget/search_bar.dart';
 import 'package:shoes_ui/widget/svg_icon.dart';
@@ -50,30 +50,25 @@ class HomePage extends StatelessWidget {
             Expanded(
               child: SizedBox(
                 height: 380,
-                child: ListView(
+                child: ListView.builder(
+                  physics: const BouncingScrollPhysics(),
                   scrollDirection: Axis.vertical,
-                  children: const [
-                    Item(
-                      imgAsset: 'assets/images/shoe1.jpg',
-                      itemName: 'Nike Air Max 90',
-                      itemPrice: '113.00',
-                      priceTextColor: Color.fromARGB(255, 85, 178, 255),
-                    ),
-                    SizedBox(height: 30),
-                    Item(
-                      imgAsset: 'assets/images/shoe2.jpg',
-                      itemName: 'Nike Civilist Dunk',
-                      itemPrice: '120.00',
-                      priceTextColor: Color(0xfff25e7e),
-                    ),
-                    SizedBox(height: 30),
-                    Item(
-                      imgAsset: 'assets/images/shoe3.jpg',
-                      itemName: 'Nike Pahtom X',
-                      itemPrice: '199.00',
-                      priceTextColor: Color(0xff94c93d),
-                    ),
-                  ],
+                  itemCount: shoeList.length,
+                  itemBuilder: (context, index) {
+                    final Shoes item = shoeList[index];
+                    return GestureDetector(
+                      onTap: () {},
+                      child: Padding(
+                        padding: const EdgeInsets.only(bottom: 30),
+                        child: Item(
+                          imgAsset: item.imgAsset!,
+                          itemName: item.itemName!,
+                          itemPrice: item.price!,
+                          priceTextColor: item.priceColor!,
+                        ),
+                      ),
+                    );
+                  },
                 ),
               ),
             ),
