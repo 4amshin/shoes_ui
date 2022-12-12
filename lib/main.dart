@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shoes_ui/view/drawer_page.dart';
 import 'package:shoes_ui/view/home_page.dart';
 
 void main() {
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const HomePage(),
+      home: const DrawerPage(),
     );
   }
 }

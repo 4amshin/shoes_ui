@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:shoes_ui/model/shoes_model.dart';
 import 'package:shoes_ui/widget/item.dart';
 import 'package:shoes_ui/widget/search_bar.dart';
@@ -22,7 +23,9 @@ class HomePage extends StatelessWidget {
           width: 60,
           height: 60,
           child: SvgIcon(
-            onTap: () {},
+            onTap: () {
+              ZoomDrawer.of(context)!.toggle();
+            },
             assetName: 'assets/icon/3lline-01.svg',
           ),
         ),
