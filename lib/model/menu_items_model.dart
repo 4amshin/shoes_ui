@@ -2,18 +2,29 @@ import 'package:flutter/material.dart';
 
 class DrawerItem {
   final String? title;
-  final IconData? icon;
+  final String? icon;
+  final Color? iconColor;
+  bool isSelected;
 
-  DrawerItem({required this.title, required this.icon});
+  DrawerItem({
+    required this.iconColor,
+    required this.title,
+    required this.icon,
+    required this.isSelected,
+  });
 }
 
-var menuItems = [
+List menuItems = [
   DrawerItem(
     title: "Home",
-    icon: Icons.home,
+    icon: "assets/icon/home.svg",
+    iconColor: Colors.white,
+    isSelected: false,
   ),
   DrawerItem(
-    title: "Info",
-    icon: Icons.info,
+    title: "About Us",
+    icon: "assets/icon/info-circle.svg",
+    iconColor: Colors.white,
+    isSelected: false,
   ),
 ];

@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_zoom_drawer/config.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
-import 'package:shoes_ui/model/menu_items_model.dart';
 import 'package:shoes_ui/view/home_page.dart';
 import 'package:shoes_ui/view/menu_page.dart';
-import 'package:shoes_ui/view/test_page.dart';
 
 class DrawerPage extends StatefulWidget {
   const DrawerPage({Key? key}) : super(key: key);
@@ -20,7 +17,8 @@ class _DrawerPageState extends State<DrawerPage> {
       menuBackgroundColor: Colors.indigo,
       borderRadius: 24.0,
       showShadow: true,
-      slideWidth: MediaQuery.of(context).size.width * 0.65,
+      angle: -6,
+      slideWidth: MediaQuery.of(context).size.width * 0.60,
       mainScreen: const HomePage(),
       menuScreen: const MenuPage(),
     );

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:shoes_ui/view/drawer_page.dart';
-import 'package:shoes_ui/view/home_page.dart';
 
 void main() {
   runApp(const MyApp());
