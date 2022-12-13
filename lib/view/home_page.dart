@@ -24,7 +24,12 @@ class HomePage extends StatelessWidget {
           height: 60,
           child: SvgIcon(
             onTap: () {
-              ZoomDrawer.of(context)!.toggle();
+              // ZoomDrawer.of(context)!.toggle();
+              if (ZoomDrawer.of(context)!.isOpen()) {
+                ZoomDrawer.of(context)!.close();
+              } else {
+                ZoomDrawer.of(context)!.open();
+              }
             },
             assetName: 'assets/icon/3lline-01.svg',
           ),

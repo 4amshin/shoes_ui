@@ -17,10 +17,12 @@ class _DrawerPageState extends State<DrawerPage> {
       menuBackgroundColor: Colors.indigo,
       borderRadius: 24.0,
       showShadow: true,
-      angle: -6,
+      angle: -4,
       slideWidth: MediaQuery.of(context).size.width * 0.60,
       mainScreen: const HomePage(),
       menuScreen: const MenuPage(),
+      openCurve: Curves.fastOutSlowIn,
+      closeCurve: Curves.easeIn,
     );
   }
 }
