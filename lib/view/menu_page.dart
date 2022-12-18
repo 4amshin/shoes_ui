@@ -30,8 +30,9 @@ class _MenuPageState extends State<MenuPage> {
                 "Menu",
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 25,
-                  fontWeight: FontWeight.w500,
+                  fontSize: 20,
+                  fontFamily: "Poppins",
+                  fontWeight: FontWeight.w300,
                 ),
               ),
             ),
@@ -81,8 +82,8 @@ class _MenuPageState extends State<MenuPage> {
                               color: _selectedMenu == index
                                   ? Colors.white70
                                   : item.iconColor,
-                              fontWeight: FontWeight.w500,
-                              fontSize: _selectedMenu == index ? 15 : 14,
+                              fontFamily: "Poppins",
+                              fontSize: _selectedMenu == index ? 14 : 13,
                             ),
                           ),
                         ],
