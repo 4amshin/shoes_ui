@@ -54,7 +54,7 @@ class Item extends StatelessWidget {
           bottom: 20,
           left: 30,
           child: Text(
-            '\$ $itemPrice',
+            itemPrice,
             style: TextStyle(
               color: priceTextColor,
               fontSize: 15,
