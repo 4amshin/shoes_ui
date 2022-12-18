@@ -2,16 +2,20 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class SvgIcon extends StatelessWidget {
-  final Function() onTap;
+  final Function()? onTap;
   final String assetName;
   final EdgeInsetsGeometry? padding;
   final Color? color;
+  final double? width;
+  final double? height;
   const SvgIcon({
     Key? key,
-    required this.onTap,
+    this.onTap,
     required this.assetName,
     this.padding,
     this.color,
+    this.width,
+    this.height,
   }) : super(key: key);
 
   @override
@@ -20,8 +24,8 @@ class SvgIcon extends StatelessWidget {
       onTap: onTap,
       child: Container(
         padding: padding,
-        width: 38,
-        height: 38,
+        width: width ?? 38,
+        height: height ?? 38,
         child: SvgPicture.asset(
           assetName,
           color: color,
