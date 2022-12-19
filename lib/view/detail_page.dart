@@ -196,23 +196,28 @@ class _DetailPageState extends State<DetailPage> {
                       children: [
                         Flexible(
                           flex: 1,
-                          child: Container(
-                            height: 40,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              border: Border.all(
-                                color: widget.item.priceColor!,
-                                width: 2,
+                          child: InkWell(
+                            onTap: () {
+                              Navigator.pop(context);
+                            },
+                            child: Container(
+                              height: 40,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                border: Border.all(
+                                  color: widget.item.priceColor!,
+                                  width: 2,
+                                ),
                               ),
-                            ),
-                            child: Center(
-                              child: Text(
-                                'Cancel',
-                                style: TextStyle(
-                                  fontFamily: "Poppins",
-                                  fontSize: 13,
-                                  color: widget.item.priceColor,
-                                  fontWeight: FontWeight.w500,
+                              child: Center(
+                                child: Text(
+                                  'Cancel',
+                                  style: TextStyle(
+                                    fontFamily: "Poppins",
+                                    fontSize: 13,
+                                    color: widget.item.priceColor,
+                                    fontWeight: FontWeight.w500,
+                                  ),
                                 ),
                               ),
                             ),
