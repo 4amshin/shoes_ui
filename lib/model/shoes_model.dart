@@ -24,7 +24,7 @@ var shoeList = [
     itemName: "Nike Civilist Dunk",
     price: "\$ 120.00",
     imgAsset: "assets/images/shoe2.jpg",
-    priceColor: const Color(0xfff25e7e),
+    priceColor: const Color(0xffF25E7E),
   ),
   Shoes(
     itemName: "Nike Phantom X",
