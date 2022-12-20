@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shoes_ui/model/shoes_model.dart';
+import 'package:shoes_ui/widget/2bottom_button.dart';
 import 'package:shoes_ui/widget/svg_icon.dart';
 
 class DetailPage extends StatefulWidget {
@@ -74,181 +75,145 @@ class _DetailPageState extends State<DetailPage> {
               ),
             ),
             const SizedBox(height: 20),
+            Container(
+              margin: const EdgeInsets.symmetric(horizontal: 15),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  SizedBox(
+                    width: 150,
+                    child: Text(
+                      widget.item.itemName!,
+                      style: const TextStyle(
+                        height: 1,
+                        fontSize: 22,
+                        fontFamily: "Poppins",
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  Text(
+                    widget.item.price!,
+                    style: TextStyle(
+                      fontSize: 22,
+                      fontFamily: "Poppins",
+                      color: widget.item.priceColor,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 10),
+            Container(
+              margin: const EdgeInsets.symmetric(horizontal: 15),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    'Size',
+                    style: TextStyle(
+                      fontSize: 13,
+                      fontFamily: "Poppins",
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                  const SizedBox(height: 15),
+                  SizedBox(
+                    height: 40,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: 5,
+                      itemBuilder: (context, index) {
+                        return Container(
+                          margin: const EdgeInsets.only(right: 20),
+                          width: 40,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.grey.withOpacity(0.25),
+                          ),
+                          child: const Center(
+                            child: Text(
+                              "42",
+                              style: TextStyle(
+                                fontFamily: "Poppins",
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                ],
+              ),
+            ),
             Expanded(
-              child: Container(
-                margin: const EdgeInsets.symmetric(horizontal: 15),
-                child: ListView(
-                  children: [
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              child: ListView(
+                children: [
+                  Card(
+                    color: Colors.transparent,
+                    elevation: 0,
+                    child: ExpansionTile(
+                      title: const Text(
+                        "Description",
+                        style: TextStyle(
+                          fontFamily: "Poppins",
+                          fontSize: 15,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
                       children: [
-                        SizedBox(
-                          width: 150,
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 15),
                           child: Text(
-                            widget.item.itemName!,
+                            widget.item.description!,
                             style: const TextStyle(
-                              height: 1,
-                              fontSize: 22,
                               fontFamily: "Poppins",
-                              fontWeight: FontWeight.bold,
+                              fontSize: 12,
                             ),
-                          ),
-                        ),
-                        Text(
-                          widget.item.price!,
-                          style: TextStyle(
-                            fontSize: 22,
-                            fontFamily: "Poppins",
-                            color: widget.item.priceColor,
+                            textAlign: TextAlign.justify,
                           ),
                         ),
                       ],
                     ),
-                    const SizedBox(height: 10),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                  ),
+                  Card(
+                    color: Colors.transparent,
+                    elevation: 0,
+                    child: ExpansionTile(
+                      title: const Text(
+                        "Review",
+                        style: TextStyle(
+                          fontFamily: "Poppins",
+                          fontSize: 15,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
                       children: [
-                        const Text(
-                          'Size',
-                          style: TextStyle(
-                            fontSize: 13,
-                            fontFamily: "Poppins",
-                            fontWeight: FontWeight.w500,
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            left: 15,
+                            right: 15,
                           ),
-                        ),
-                        const SizedBox(height: 15),
-                        SizedBox(
-                          height: 40,
-                          child: ListView.builder(
-                            scrollDirection: Axis.horizontal,
-                            itemCount: 5,
-                            itemBuilder: (context, index) {
-                              return Container(
-                                margin: const EdgeInsets.only(right: 20),
-                                width: 40,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  color: Colors.grey.withOpacity(0.25),
-                                ),
-                                child: const Center(
-                                  child: Text(
-                                    "42",
-                                    style: TextStyle(
-                                      fontFamily: "Poppins",
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                                  ),
-                                ),
-                              );
-                            },
-                          ),
-                        ),
-                        //add the description dropdown menu
-                        const SizedBox(height: 15),
-                        SizedBox(
-                          height: 50,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: const [
-                              Text(
-                                "Description",
-                                style: TextStyle(
-                                  fontFamily: "Poppins",
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                              SvgIcon(
-                                assetName: "assets/icon/arrow-down.svg",
-                                width: 15,
-                                color: Colors.black,
-                              ),
-                            ],
-                          ),
-                        ),
-                        SizedBox(
-                          height: 50,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: const [
-                              Text(
-                                "Review",
-                                style: TextStyle(
-                                  fontFamily: "Poppins",
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                              SvgIcon(
-                                assetName: "assets/icon/arrow-down.svg",
-                                width: 15,
-                                color: Colors.black,
-                              ),
-                            ],
+                          child: Text(
+                            widget.item.review!,
+                            style: const TextStyle(
+                              fontFamily: "Poppins",
+                              fontSize: 12,
+                            ),
+                            textAlign: TextAlign.justify,
                           ),
                         ),
                       ],
                     ),
-                    const SizedBox(height: 20),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Flexible(
-                          flex: 1,
-                          child: InkWell(
-                            onTap: () {
-                              Navigator.pop(context);
-                            },
-                            child: Container(
-                              height: 40,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                border: Border.all(
-                                  color: widget.item.priceColor!,
-                                  width: 2,
-                                ),
-                              ),
-                              child: Center(
-                                child: Text(
-                                  'Cancel',
-                                  style: TextStyle(
-                                    fontFamily: "Poppins",
-                                    fontSize: 13,
-                                    color: widget.item.priceColor,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        const SizedBox(width: 20),
-                        Flexible(
-                          flex: 1,
-                          child: Container(
-                            height: 40,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              color: widget.item.priceColor!,
-                            ),
-                            child: const Center(
-                              child: Text(
-                                'Add to Cart',
-                                style: TextStyle(
-                                  fontFamily: "Poppins",
-                                  fontSize: 13,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    )
-                  ],
-                ),
+                  ),
+                  const SizedBox(height: 20),
+                  Container(
+                    margin: const EdgeInsets.symmetric(horizontal: 15),
+                    child: BottomButtons(color: widget.item.priceColor),
+                  ),
+                ],
               ),
             ),
           ],
