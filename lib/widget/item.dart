@@ -17,13 +17,17 @@ class Item extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Container(
-          height: 275,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(30),
-            image: DecorationImage(
-              image: AssetImage(imgAsset),
-              fit: BoxFit.cover,
+        Hero(
+          tag: "image",
+          transitionOnUserGestures: true,
+          child: Container(
+            height: 275,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(30),
+              image: DecorationImage(
+                image: AssetImage(imgAsset),
+                fit: BoxFit.cover,
+              ),
             ),
           ),
         ),
