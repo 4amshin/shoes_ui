@@ -4,22 +4,23 @@ class Item extends StatelessWidget {
   final String imgAsset;
   final String itemName;
   final String itemPrice;
+  final String heroTag;
   final Color priceTextColor;
-  const Item(
-      {Key? key,
-      required this.imgAsset,
-      required this.itemName,
-      required this.itemPrice,
-      required this.priceTextColor})
-      : super(key: key);
+  const Item({
+    Key? key,
+    required this.imgAsset,
+    required this.itemName,
+    required this.itemPrice,
+    required this.heroTag,
+    required this.priceTextColor,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
         Hero(
-          tag: "image",
-          transitionOnUserGestures: true,
+          tag: heroTag,
           child: Container(
             height: 275,
             decoration: BoxDecoration(

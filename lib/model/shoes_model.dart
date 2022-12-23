@@ -7,6 +7,7 @@ class Shoes {
   final Color? priceColor;
   final String? description;
   final String? review;
+  final String? heroTag;
 
   Shoes({
     required this.itemName,
@@ -15,6 +16,7 @@ class Shoes {
     required this.priceColor,
     required this.description,
     required this.review,
+    required this.heroTag,
   });
 }
 
@@ -28,6 +30,7 @@ var shoeList = [
         "Step up your style game with these sleek and stylish shoes. Made with high-quality materials and a durable construction, these shoes are built to last. The breathable and padded interior ensures maximum comfort, while the rubber outsole provides excellent traction and support.",
     review:
         "The materials and construction are top-notch and the shoes are incredibly comfortable to wear. I've worn them for both casual outings and more intense activities, and they have held up well in both situations. The rubber outsole provides excellent traction and the padded interior makes them a pleasure to wear for extended periods of time.",
+    heroTag: "airMax",
   ),
   Shoes(
     itemName: "Nike Civilist Dunk",
@@ -38,6 +41,7 @@ var shoeList = [
         "Step up your style game with these sleek and stylish shoes. Made with high-quality materials and a durable construction, these shoes are built to last. The breathable and padded interior ensures maximum comfort, while the rubber outsole provides excellent traction and support.",
     review:
         "The materials and construction are top-notch and the shoes are incredibly comfortable to wear. I've worn them for both casual outings and more intense activities, and they have held up well in both situations. The rubber outsole provides excellent traction and the padded interior makes them a pleasure to wear for extended periods of time.",
+    heroTag: "dunk",
   ),
   Shoes(
     itemName: "Nike Phantom X",
@@ -48,5 +52,6 @@ var shoeList = [
         "Step up your style game with these sleek and stylish shoes. Made with high-quality materials and a durable construction, these shoes are built to last. The breathable and padded interior ensures maximum comfort, while the rubber outsole provides excellent traction and support.",
     review:
         "The materials and construction are top-notch and the shoes are incredibly comfortable to wear. I've worn them for both casual outings and more intense activities, and they have held up well in both situations. The rubber outsole provides excellent traction and the padded interior makes them a pleasure to wear for extended periods of time.",
+    heroTag: "phantom",
   ),
 ];

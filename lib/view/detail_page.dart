@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shoes_ui/model/shoes_model.dart';
 import 'package:shoes_ui/widget/2bottom_button.dart';
 import 'package:shoes_ui/widget/svg_icon.dart';
+import 'package:shoes_ui/widget/text_style.dart';
 
 class DetailPage extends StatefulWidget {
   final Shoes item;
@@ -20,12 +21,12 @@ class _DetailPageState extends State<DetailPage> {
           left: 15,
           right: 15,
           bottom: 15,
-          top: 15,
+          top: 5,
         ),
         child: Column(
           children: [
             Hero(
-              tag: "image",
+              tag: widget.item.heroTag!,
               child: Container(
                 height: 350,
                 decoration: BoxDecoration(
@@ -46,7 +47,7 @@ class _DetailPageState extends State<DetailPage> {
                       height: 35,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        color: Colors.grey.withOpacity(0.25),
+                        color: Colors.white.withOpacity(0.3),
                       ),
                       child: Padding(
                         padding: const EdgeInsets.all(8),
@@ -64,7 +65,7 @@ class _DetailPageState extends State<DetailPage> {
                       height: 35,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        color: Colors.grey.withOpacity(0.25),
+                        color: Colors.white.withOpacity(0.3),
                       ),
                       child: const Padding(
                         padding: EdgeInsets.all(10),
@@ -88,12 +89,7 @@ class _DetailPageState extends State<DetailPage> {
                     width: 150,
                     child: Text(
                       widget.item.itemName!,
-                      style: const TextStyle(
-                        height: 1,
-                        fontSize: 22,
-                        fontFamily: "Poppins",
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: bigTitleStyle,
                     ),
                   ),
                   Text(
@@ -113,13 +109,9 @@ class _DetailPageState extends State<DetailPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
+                  Text(
                     'Size',
-                    style: TextStyle(
-                      fontSize: 13,
-                      fontFamily: "Poppins",
-                      fontWeight: FontWeight.w500,
-                    ),
+                    style: mediumTitleStyle(fontSize: 13),
                   ),
                   const SizedBox(height: 15),
                   SizedBox(
@@ -158,23 +150,16 @@ class _DetailPageState extends State<DetailPage> {
                     color: Colors.transparent,
                     elevation: 0,
                     child: ExpansionTile(
-                      title: const Text(
+                      title: Text(
                         "Description",
-                        style: TextStyle(
-                          fontFamily: "Poppins",
-                          fontSize: 15,
-                          fontWeight: FontWeight.w500,
-                        ),
+                        style: mediumTitleStyle(fontSize: 15),
                       ),
                       children: [
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 15),
                           child: Text(
                             widget.item.description!,
-                            style: const TextStyle(
-                              fontFamily: "Poppins",
-                              fontSize: 12,
-                            ),
+                            style: detailStyle,
                             textAlign: TextAlign.justify,
                           ),
                         ),
@@ -185,13 +170,9 @@ class _DetailPageState extends State<DetailPage> {
                     color: Colors.transparent,
                     elevation: 0,
                     child: ExpansionTile(
-                      title: const Text(
+                      title: Text(
                         "Review",
-                        style: TextStyle(
-                          fontFamily: "Poppins",
-                          fontSize: 15,
-                          fontWeight: FontWeight.w500,
-                        ),
+                        style: mediumTitleStyle(fontSize: 15),
                       ),
                       children: [
                         Padding(
@@ -201,10 +182,7 @@ class _DetailPageState extends State<DetailPage> {
                           ),
                           child: Text(
                             widget.item.review!,
-                            style: const TextStyle(
-                              fontFamily: "Poppins",
-                              fontSize: 12,
-                            ),
+                            style: detailStyle,
                             textAlign: TextAlign.justify,
                           ),
                         ),

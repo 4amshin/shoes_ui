@@ -77,6 +77,7 @@ class HomePage extends StatelessWidget {
                       child: Padding(
                         padding: const EdgeInsets.only(bottom: 30),
                         child: Item(
+                          heroTag: item.heroTag!,
                           imgAsset: item.imgAsset!,
                           itemName: item.itemName!,
                           itemPrice: item.price!,
