@@ -3,7 +3,7 @@ import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:shoes_ui/model/shoes_model.dart';
 import 'package:shoes_ui/view/detail_page.dart';
 import 'package:shoes_ui/widget/item.dart';
-import 'package:shoes_ui/widget/search_bar.dart';
+import 'package:shoes_ui/widget/searching_bar.dart';
 import 'package:shoes_ui/widget/svg_icon.dart';
 
 class HomePage extends StatelessWidget {
@@ -52,9 +52,7 @@ class HomePage extends StatelessWidget {
         ),
         child: Column(
           children: [
-            const SearchBar(
-              text: 'Search Shoes',
-            ),
+            SearchingBar(),
             const SizedBox(height: 20),
             Expanded(
               child: SizedBox(
