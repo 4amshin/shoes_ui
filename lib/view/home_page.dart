@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:shoes_ui/model/shoes_model.dart';
+import 'package:shoes_ui/view/detail_page.dart';
 import 'package:shoes_ui/widget/item.dart';
-import 'package:shoes_ui/widget/search_bar.dart';
+import 'package:shoes_ui/widget/searching_bar.dart';
 import 'package:shoes_ui/widget/svg_icon.dart';
 
 class HomePage extends StatelessWidget {
@@ -51,9 +52,7 @@ class HomePage extends StatelessWidget {
         ),
         child: Column(
           children: [
-            const SearchBar(
-              text: 'Search Shoes',
-            ),
+            SearchingBar(),
             const SizedBox(height: 20),
             Expanded(
               child: SizedBox(
@@ -65,10 +64,18 @@ class HomePage extends StatelessWidget {
                   itemBuilder: (context, index) {
                     final Shoes item = shoeList[index];
                     return GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => DetailPage(item: item),
+                          ),
+                        );
+                      },
                       child: Padding(
                         padding: const EdgeInsets.only(bottom: 30),
                         child: Item(
+                          heroTag: item.heroTag!,
                           imgAsset: item.imgAsset!,
                           itemName: item.itemName!,
                           itemPrice: item.price!,

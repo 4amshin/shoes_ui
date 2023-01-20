@@ -4,26 +4,31 @@ class Item extends StatelessWidget {
   final String imgAsset;
   final String itemName;
   final String itemPrice;
+  final String heroTag;
   final Color priceTextColor;
-  const Item(
-      {Key? key,
-      required this.imgAsset,
-      required this.itemName,
-      required this.itemPrice,
-      required this.priceTextColor})
-      : super(key: key);
+  const Item({
+    Key? key,
+    required this.imgAsset,
+    required this.itemName,
+    required this.itemPrice,
+    required this.heroTag,
+    required this.priceTextColor,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Container(
-          height: 275,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(30),
-            image: DecorationImage(
-              image: AssetImage(imgAsset),
-              fit: BoxFit.cover,
+        Hero(
+          tag: heroTag,
+          child: Container(
+            height: 275,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(30),
+              image: DecorationImage(
+                image: AssetImage(imgAsset),
+                fit: BoxFit.cover,
+              ),
             ),
           ),
         ),
@@ -54,7 +59,7 @@ class Item extends StatelessWidget {
           bottom: 20,
           left: 30,
           child: Text(
-            '\$ $itemPrice',
+            itemPrice,
             style: TextStyle(
               color: priceTextColor,
               fontSize: 15,
